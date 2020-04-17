@@ -8,3 +8,5 @@ end
 
 run("ls")
 run("sssssssS")
+
+echo "Deploy OK"
