@@ -38,4 +38,6 @@ jobs:
     - name: Run a multi-line script
       run: |
         git remote add staging madmax@cebulion.neubloc.pl:/home/madmax/gh-actions-test
-        git push staging --force
+        git push staging --force | tee -a out.txt
+        bin/check_deploy_status
+
