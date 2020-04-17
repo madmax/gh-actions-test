@@ -1,7 +1,10 @@
 #!/bin/sh
 
+echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 cat $1
 if ! grep -q "Deploy status: OK" "$1"; then
   echo "Deploy failed"
   exit 1
 fi
+
+echo "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
