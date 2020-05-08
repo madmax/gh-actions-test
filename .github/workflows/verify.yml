@@ -56,13 +56,10 @@ jobs:
     name: Tests
     runs-on: ubuntu-latest
     services:
-      postgres:
-        image: postgres:11
+      mysql:
+        image: mysql:8
         env:
-          POSTGRES_USER: myapp
-          POSTGRES_DB: myapp_test
-          POSTGRES_PASSWORD: ""
-        ports: ["5432:5432"]
+          MYSQL_ROOT_PASSWORD: "qwerty123"
 
     steps:
       - name: Checkout code
@@ -103,10 +100,9 @@ jobs:
       - name: Setup test database
         env:
           RAILS_ENV: test
-          PGHOST: localhost
-          PGUSER: myapp
+          DATABASE_URL: mysql2://root:qwerty123@127.0.0.1/app?pool=30&encoding=utf8mb4&collation=utf8mb4_unicode_ci
         run: |
           bin/rails db:setup
 
       - name: Run tests
-        run: bin/rspec
+        run: bin/rails tests
