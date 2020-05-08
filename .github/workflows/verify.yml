@@ -1,4 +1,4 @@
-ame: Verify
+name: Verify
 on: [push]
 
 jobs:
