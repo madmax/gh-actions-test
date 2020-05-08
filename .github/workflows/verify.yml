@@ -105,4 +105,4 @@ jobs:
           bin/rails db:setup
 
       - name: Run tests
-        run: bin/rails tests
+        run: bin/rails test
