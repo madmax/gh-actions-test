@@ -124,6 +124,10 @@ GEM
       rexml
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-rails (2.5.2)
+      activesupport
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
     ruby-progressbar (1.10.1)
     sprockets (4.0.0)
       concurrent-ruby (~> 1.0)
@@ -147,7 +151,7 @@ PLATFORMS
 
 DEPENDENCIES
   rails
-  rubocop
+  rubocop-rails
 
 BUNDLED WITH
    2.1.4
