@@ -55,6 +55,9 @@ jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: mysql2://root:qwerty123@127.0.0.1/app?pool=30&encoding=utf8mb4&collation=utf8mb4_unicode_ci
     services:
       mysql:
         image: mysql:8
@@ -98,9 +101,6 @@ jobs:
           yarn install --pure-lockfile
 
       - name: Setup test database
-        env:
-          RAILS_ENV: test
-          DATABASE_URL: mysql2://root:qwerty123@127.0.0.1/app?pool=30&encoding=utf8mb4&collation=utf8mb4_unicode_ci
         run: |
           bin/rails db:setup
 
